@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import NavBar from "../components/NavBar/navBar";
 
 import Logo from "../assets/KBlogo.png";
 import Linkedin from "../assets/linkedin-brands.png";
@@ -29,37 +29,25 @@ const AboutMe = () => {
         </div>
         <div className="contactWrapper">
           <div className="contactWrapper_logo">
-            <a className="logo" href="/">
-              <img src={Linkedin} alt="logo" />
+            <a className="logo" href="https://www.linkedin.com/in/khalil-benachir-797228155/">
+              <img src={Linkedin} alt="linkedin" />
             </a>
-            <a className="logo" href="/">
-              <img src={Instagram} alt="logo" />
+            <a className="logo" href="https://www.instagram.com/khalil_benachir/">
+              <img src={Instagram} alt="instagram" />
             </a>
-            <a className="logo" href="/">
-              <img src={Github} alt="logo" />
+            <a className="logo" href="https://github.com/khalilbenachir">
+              <img src={Github} alt="github" />
             </a>
           </div>
         </div>
       </div>
       <div className="main__right">
-        <nav class="main__right_navbar">
-          <ul>
-            <li>
-              <Link to="/aboutme">About me</Link>
-            </li>
-            <li>
-              <Link to="/mywork">My work</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
+        <NavBar />
         <div className="main__right-content">
           <img
             className="content_picture"
             src={Main_picture}
-            alt="main picture"
+            alt="main_picture"
           />
         </div>
       </div>
