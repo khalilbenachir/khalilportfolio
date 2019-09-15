@@ -45,13 +45,13 @@ const AboutMe = () => {
         <nav class="main__right_navbar">
           <ul>
             <li>
-              <Link to="/about">About me</Link>
+              <Link to="/aboutme">About me</Link>
             </li>
             <li>
-              <Link to="/about">My work</Link>
+              <Link to="/mywork">My work</Link>
             </li>
             <li>
-              <Link to="/about">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
