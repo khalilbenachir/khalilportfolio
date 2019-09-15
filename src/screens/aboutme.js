@@ -1,15 +1,16 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import Logo from "../assets/KBlogo.png";
 import Linkedin from "../assets/linkedin-brands.png";
 import Instagram from "../assets/instagram-brands.svg";
 import Github from "../assets/github-square-brands.png";
-import Main_picture from '../assets/2114086.png';
+import Main_picture from "../assets/2114086.png";
 
 import "./aboutme.css";
 
 const AboutMe = () => {
-  console.log(window.innerWidth, window.innerHeight);
   return (
     <div className="main">
       <div className="main__left">
@@ -41,31 +42,27 @@ const AboutMe = () => {
         </div>
       </div>
       <div className="main__right">
-        <div className="main__right_navbar">
-          <div className="navbar_item">
-            <a href="/">ABOUT ME</a>
-            <div className="navbar-item-hover">
-              <span className="circle"></span>
-            </div>
-          </div>
-
-          <div className="navbar_item">
-            <a href="/">MY WORK</a>
-            <div className="navbar-item-hover">
-              <span className="circle"></span>
-            </div>{" "}
-          </div>
-          <div className="navbar_item">
-            <a href="/">CONTACT</a>
-            <div className="navbar-item-hover">
-              <span className="circle"></span>
-            </div>
-          </div>
+        <nav class="main__right_navbar">
+          <ul>
+            <li>
+              <Link to="/about">About me</Link>
+            </li>
+            <li>
+              <Link to="/about">My work</Link>
+            </li>
+            <li>
+              <Link to="/about">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="main__right-content">
+          <img
+            className="content_picture"
+            src={Main_picture}
+            alt="main picture"
+          />
         </div>
-              <div className="main__right-content">
-                  <img className="content_picture" src={Main_picture}/>
-        </div>
-          </div>
+      </div>
     </div>
   );
 };

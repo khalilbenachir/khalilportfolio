@@ -83,6 +83,7 @@
 }
 .contentWrapper-heading3:hover {
   transform: translateY(5%);
+  transform: scale(1.1);
 }
 
 .contactWrapper {
@@ -129,7 +130,7 @@
 
 .logo:hover {
   transform: scale(1.5);
-  transform: translateX(-10);
+  transform: translateX(-2);
 }
 
 .main__right_navbar {
@@ -138,48 +139,90 @@
   justify-content: center;
   align-items: center;
   margin: 1rem 10%;
-   grid-row: 1/2; 
-}
-
-.navbar_item {
-  margin: 3rem 1.5rem;
-  text-transform: uppercase;
-  display: grid;
-  grid-template-rows: 80% 20%;
-}
-.navbar_item > a {
   grid-row: 1/2;
-  text-decoration: none;
-  font-size: 34;
-  color: black;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.navbar-item-hover {
+.main__right-content {
   grid-row: 2/3;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
-.navbar_item > a:hover{
-        color:#ffb700;
-        
-      
+.content_picture {
+  width: 80%;
+  height: 70%;
 }
 
-.main__right-content{
-    grid-row: 2/3;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+nav div a,
+nav div a:after,
+nav div a:before {
+  transition: all 0.5s;
+}
+nav div a:hover {
+  color: #555;
 }
 
-.content_picture{
-    width: 80%;
-    height: 70%;
+nav {
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
 }
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: flex;
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+nav ul li a:hover {
+  color: white;
+}
+
+/* SHIFT */
+nav.main__right_navbar ul li a {
+  position: relative;
+  z-index: 1;
+}
+nav.main__right_navbar ul li a:hover {
+  color: white;
+}
+nav.main__right_navbar ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: ".hhh";
+  color: transparent;
+  background: #f1c40f;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav.main__right_navbar ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
