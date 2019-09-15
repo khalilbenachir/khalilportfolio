@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Contact from "./screens/contact";
-import AboutMe from "./screens/aboutme";
+import Contact from "./screens/contact/contact";
+import AboutMe from "./screens/aboutme/aboutme";
 import MyWork from "./screens/mywork";
 
 function App() {

@@ -1,12 +1,12 @@
 import React from "react";
 
-import NavBar from "../components/NavBar/navBar";
+import NavBar from "../../components/NavBar/navBar";
 
-import Logo from "../assets/KBlogo.png";
-import Linkedin from "../assets/linkedin-brands.png";
-import Instagram from "../assets/instagram-brands.svg";
-import Github from "../assets/github-square-brands.png";
-import Main_picture from "../assets/2114086.png";
+import Logo from "../../assets/KBlogo.png";
+import Linkedin from "../../assets/linkedin-brands.png";
+import Instagram from "../../assets/instagram-brands.svg";
+import Github from "../../assets/github-square-brands.png";
+import Main_picture from "../../assets/2114086.png";
 
 import "./aboutme.css";
 
