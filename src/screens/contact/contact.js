@@ -2,15 +2,32 @@ import React from "react";
 
 import NavBar from "../../components/NavBar/navBar";
 
-import { Typography, TextField } from "@material-ui/core";
-import { InputMask} from "react-input-mask"
+import { Typography, TextField, Button } from "@material-ui/core";
+import { InputMask } from "react-input-mask";
+
+import { makeStyles } from "@material-ui/styles";
 
 import Logo from "../../assets/KBlogo.png";
 import Main_picture from "../../assets/2761143.png";
 
 import "./contact.css";
 
+const useStyles = makeStyles({
+  root: {
+    background: "linear-gradient(45deg, #373737 30%, #1B1B1B 90%)",
+    color: "#fff",
+    height: 48,
+    margin: "5px 0"
+  },
+  input: {
+    margin: '0',
+    height: '50%',
+  }
+});
+
 const AboutMe = () => {
+  const classes = useStyles();
+
   return (
     <div className="main">
       <div className="contact__left">
@@ -33,6 +50,7 @@ const AboutMe = () => {
                   variant="outlined"
                   required
                   fullWidth
+                  margin="normal"
                   id="firstName"
                   label="First Name"
                   autoFocus
@@ -44,6 +62,8 @@ const AboutMe = () => {
                   name="lastName"
                   variant="outlined"
                   required
+                  margin="normal"
+
                   fullWidth
                   id="firstName"
                   label="Last Name"
@@ -55,6 +75,8 @@ const AboutMe = () => {
               <TextField
                 variant="outlined"
                 required
+                margin="normal"
+
                 fullWidth
                 type="email"
                 id="email"
@@ -70,15 +92,13 @@ const AboutMe = () => {
                 variant="outlined"
                 required
                 fullWidth
-                multiline
-                rowsMax={4}
+                margin="normal"
+
                 id="email"
                 label="Phone Number"
                 autoComplete="phone"
-
               >
-                          <InputMask  mask="(0)999 999 99 99" maskChar=" " />            
-
+                <InputMask mask="(0)999 999 99 99" maskChar=" " />
               </TextField>
             </div>
             <div className="form_message">
@@ -86,14 +106,26 @@ const AboutMe = () => {
                 variant="outlined"
                 required
                 fullWidth
-                multiline
-                rows={5}
+                multiline                
+                rowsMax={4}
+
+                rows={3}
                 type="text"
                 id="message"
-                label="Message"
+                label="Write us a message"
                 name="message"
                 autoComplete="message"
               />
+            </div>
+            <div className="form_button">
+              <Button
+                className={classes.root}
+                fullWidth
+                variant="contained"
+                color="#000"
+              >
+                SEND MESSAGE
+              </Button>
             </div>
           </form>
         </div>

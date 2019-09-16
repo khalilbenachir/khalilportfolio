@@ -54,48 +54,62 @@
 .formWrapper__form {
   grid-row: 2/3;
   display: grid;
-  grid-template-rows: repeat(3, 20%) 1fr;
+  grid-template-rows: repeat(3, 15%) 22% 10%;
 }
 
 .form_name {
   grid: 1/2;
   display: grid;
   grid-template-columns: 50% 50%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 10%;
+
 }
 .form_firstname {
   grid-column: 1/2;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin-right: 5px;
 }
 .form_lastname {
   grid-column: 2/3;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
 }
 .form_email {
   grid-row: 2/3;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .form_phone {
   grid-row: 3/4;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .form_message{
   grid-row: 4/5;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 5px;
+}
+.form_button{
+  grid-row: 5/6;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 1rem;
 }
 .main__right-content {
   grid-row: 2/3;
