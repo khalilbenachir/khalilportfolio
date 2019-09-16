@@ -42,7 +42,8 @@ const AboutMe = () => {
         </div>
       </div>
       <div className="main__right">
-        <NavBar />
+        
+        <NavBar  />
         <div className="main__right-content">
           <img
             className="content_picture"
