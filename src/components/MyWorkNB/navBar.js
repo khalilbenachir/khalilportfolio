@@ -5,7 +5,7 @@ import './navbar.css';
 export default class NavBar extends Component {
   render() {
     return (
-      <nav class="mywork_navbar">
+      <nav className="mywork_navbar">
         <ul>
           <li>
             <Link to="/aboutme">About me</Link>
