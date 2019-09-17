@@ -7,6 +7,12 @@ import { InputMask } from "react-input-mask";
 
 import { makeStyles } from "@material-ui/styles";
 
+import { connect } from "react-redux";
+import {
+  handleUserInput,
+  handleForm
+} from "../../redux/portfolio/portfolio-actions";
+
 import Logo from "../../assets/KBlogo.png";
 import Main_picture from "../../assets/2761143.png";
 
@@ -20,14 +26,22 @@ const useStyles = makeStyles({
     margin: "5px 0"
   },
   input: {
-    margin: '0',
-    height: '50%',
+    margin: "0",
+    height: "50%"
   }
 });
 
-const AboutMe = () => {
+const Contactus = props => {
   const classes = useStyles();
-
+  const {
+    handleUserInput,
+    handleSubmitForm,
+    phone,
+    message,
+    lastName,
+    firstName,
+    email
+  } = props;
   return (
     <div className="main">
       <div className="contact__left">
@@ -41,7 +55,11 @@ const AboutMe = () => {
               LET'S GET IN TOUCH
             </Typography>
           </div>
-          <form className="formWrapper__form">
+          <form
+            name="contactForm"
+            onSubmit={handleSubmitForm}
+            className="formWrapper__form"
+          >
             <div className="form_name">
               <div className="form_firstname">
                 <TextField
@@ -49,7 +67,9 @@ const AboutMe = () => {
                   name="firstName"
                   variant="outlined"
                   required
+                  onChange={handleUserInput}
                   fullWidth
+                  value={firstName}
                   margin="normal"
                   id="firstName"
                   label="First Name"
@@ -63,9 +83,10 @@ const AboutMe = () => {
                   variant="outlined"
                   required
                   margin="normal"
-
+                  value={lastName}
+                  onChange={handleUserInput}
                   fullWidth
-                  id="firstName"
+                  id="lastName"
                   label="Last Name"
                   autoFocus
                 />
@@ -76,13 +97,14 @@ const AboutMe = () => {
                 variant="outlined"
                 required
                 margin="normal"
-
+                onChange={handleUserInput}
                 fullWidth
                 type="email"
+                value={email}
                 id="email"
                 label="Email Address"
                 name="email"
-                autoComplete="email"
+                autoFocus
               />
             </div>
             <div className="form_phone">
@@ -90,15 +112,19 @@ const AboutMe = () => {
                 name="phone"
                 type="text"
                 variant="outlined"
+                value={phone}
                 required
                 fullWidth
                 margin="normal"
-
+                onChange={handleUserInput}
                 id="email"
                 label="Phone Number"
-                autoComplete="phone"
               >
-                <InputMask mask="(0)999 999 99 99" maskChar=" " />
+                <InputMask
+                  placeholder="+212 6 99 99 99 99"
+                  mask="+212 6 99 99 99 99"
+                  maskChar=" "
+                />
               </TextField>
             </div>
             <div className="form_message">
@@ -106,9 +132,10 @@ const AboutMe = () => {
                 variant="outlined"
                 required
                 fullWidth
-                multiline                
+                multiline
+                value={message}
                 rowsMax={4}
-
+                onChange={handleUserInput}
                 rows={3}
                 type="text"
                 id="message"
@@ -119,10 +146,10 @@ const AboutMe = () => {
             </div>
             <div className="form_button">
               <Button
+                type="submit"
                 className={classes.root}
                 fullWidth
                 variant="contained"
-                color="#000"
               >
                 SEND MESSAGE
               </Button>
@@ -144,4 +171,21 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+const mapStateToProps = state => ({
+  repositories: state.portfolio.repositories,
+  phone: state.portfolio.phone,
+  message: state.portfolio.message,
+  lastName: state.portfolio.lastName,
+  firstName: state.portfolio.firstName,
+  email: state.portfolio.email
+});
+
+const mapDispatchToProps = dispatch => ({
+  handleUserInput: event => dispatch(handleUserInput(event)),
+  handleSubmitForm: event => dispatch(handleForm(event))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Contactus);
