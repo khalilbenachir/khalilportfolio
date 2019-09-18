@@ -14,7 +14,7 @@ export default class NavBar extends Component {
             <Link to="/mywork">My work</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Contact US</Link>
           </li>
         </ul>
       </nav>
